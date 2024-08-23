@@ -5,8 +5,8 @@
 //  Created by Michael Markley on 8/23/24.
 //
 
-#ifndef KeyStoreValue_hpp
-#define KeyStoreValue_hpp
+#ifndef KeyStore_hpp
+#define KeyStore_hpp
 
 #include <stdio.h>
 #include <iostream>
@@ -15,7 +15,7 @@
 #include <any>
 #include <mutex>
 
-class KeyStoreValue {
+class KeyStore {
 public:
     void initializeWithDefaults() {
         int value = 10;
@@ -50,12 +50,28 @@ public:
         lock.unlock();
         return value;
     }
-
     
 private:
     std::map<std::string, std::any> valueMap;
     std::mutex mutex;
     std::unique_lock<std::mutex> lock;
+    
+    // We need to save the data to a persistent store. So we'll create a thread
+    // to write the data, 
+    std::mutex persist_mutex;
+    void persist(std::byte* bytes) {
+        
+    }
+    
+    std::byte* toByteArray() {
+        return NULL;
+    }
 };
 
-#endif /* KeyStoreValue_hpp */
+struct serialized {
+    char* key;
+    char* type;
+    void* data;
+}
+
+#endif /* KeyStore_hpp */

@@ -1,0 +1,7 @@
+KeyValueStore/._KeyStore.cpp
+KeyValueStore/._KeyStore.hpp
+.gitignore.swp
+KeyValueStore/._main.cpp
+._KeyValueStore.xcodeproj
+KeyValueStore.xcodeproj/._project.xcworkspace
+**/*.xcodeproj/xcuserdata/

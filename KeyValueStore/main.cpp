@@ -6,11 +6,11 @@
 //
 
 #include <iostream>
-#include "KeyStoreValue.hpp"
+#include "KeyStore.hpp"
 #include <thread>
 
-// Thread to read values
-void threadOne(KeyStoreValue* keyStore) {
+// Thread to read values, for testing
+void threadOne(KeyStore* keyStore) {
     for(int i = 0; i < 100; i++) {
         std::any retrieved = keyStore->get("keyOne");
         int valueOne = std::any_cast<int>(retrieved);
@@ -20,8 +20,8 @@ void threadOne(KeyStoreValue* keyStore) {
     
 }
 
-// Thread to write values
-void threadTwo(KeyStoreValue* keyStore) {
+// Thread to write values, for testing
+void threadTwo(KeyStore* keyStore) {
     for(int i = 0; i < 50; i++) {
         std::cout << "Writing " << i << " to keyStore\n";
         keyStore->put("keyOne", i);
@@ -32,12 +32,14 @@ void threadTwo(KeyStoreValue* keyStore) {
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    KeyStoreValue keyStore;
+    KeyStore keyStore;
 
+    // Call the initialization method for the KeyStore
     keyStore.initializeWithDefaults();
     std::any retrieved = keyStore.get("keyOne");
     
     // Validate the initial values in the KeyValueStore
+    
     try {
         int valueOne = std::any_cast<int>(retrieved);
         std::cout << "Got " << valueOne << " for keyOne\n";

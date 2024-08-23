@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D379985C2C78F6CC00044008 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D379985B2C78F6CC00044008 /* main.cpp */; };
-		D37998642C78F8F800044008 /* KeyStoreValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D37998622C78F8F800044008 /* KeyStoreValue.cpp */; };
+		D37998642C78F8F800044008 /* KeyStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D37998622C78F8F800044008 /* KeyStore.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +26,8 @@
 /* Begin PBXFileReference section */
 		D37998582C78F6CC00044008 /* KeyValueStore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KeyValueStore; sourceTree = BUILT_PRODUCTS_DIR; };
 		D379985B2C78F6CC00044008 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		D37998622C78F8F800044008 /* KeyStoreValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KeyStoreValue.cpp; sourceTree = "<group>"; };
-		D37998632C78F8F800044008 /* KeyStoreValue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KeyStoreValue.hpp; sourceTree = "<group>"; };
+		D37998622C78F8F800044008 /* KeyStore.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KeyStore.cpp; sourceTree = "<group>"; };
+		D37998632C78F8F800044008 /* KeyStore.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KeyStore.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				D379985B2C78F6CC00044008 /* main.cpp */,
-				D37998622C78F8F800044008 /* KeyStoreValue.cpp */,
-				D37998632C78F8F800044008 /* KeyStoreValue.hpp */,
+				D37998622C78F8F800044008 /* KeyStore.cpp */,
+				D37998632C78F8F800044008 /* KeyStore.hpp */,
 			);
 			path = KeyValueStore;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D379985C2C78F6CC00044008 /* main.cpp in Sources */,
-				D37998642C78F8F800044008 /* KeyStoreValue.cpp in Sources */,
+				D37998642C78F8F800044008 /* KeyStore.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
