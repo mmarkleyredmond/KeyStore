@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D33F1FFF2C792AFC00932E52 /* KeyStoreTwo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D33F1FFD2C792AFC00932E52 /* KeyStoreTwo.cpp */; };
 		D379985C2C78F6CC00044008 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D379985B2C78F6CC00044008 /* main.cpp */; };
 		D37998642C78F8F800044008 /* KeyStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D37998622C78F8F800044008 /* KeyStore.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D33F1FFD2C792AFC00932E52 /* KeyStoreTwo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KeyStoreTwo.cpp; sourceTree = "<group>"; };
+		D33F1FFE2C792AFC00932E52 /* KeyStoreTwo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KeyStoreTwo.hpp; sourceTree = "<group>"; };
 		D37998582C78F6CC00044008 /* KeyValueStore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KeyValueStore; sourceTree = BUILT_PRODUCTS_DIR; };
 		D379985B2C78F6CC00044008 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D37998622C78F8F800044008 /* KeyStore.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KeyStore.cpp; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				D379985B2C78F6CC00044008 /* main.cpp */,
 				D37998622C78F8F800044008 /* KeyStore.cpp */,
 				D37998632C78F8F800044008 /* KeyStore.hpp */,
+				D33F1FFD2C792AFC00932E52 /* KeyStoreTwo.cpp */,
+				D33F1FFE2C792AFC00932E52 /* KeyStoreTwo.hpp */,
 			);
 			path = KeyValueStore;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33F1FFF2C792AFC00932E52 /* KeyStoreTwo.cpp in Sources */,
 				D379985C2C78F6CC00044008 /* main.cpp in Sources */,
 				D37998642C78F8F800044008 /* KeyStore.cpp in Sources */,
 			);

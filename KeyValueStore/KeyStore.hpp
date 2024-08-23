@@ -15,6 +15,13 @@
 #include <any>
 #include <mutex>
 
+
+struct serialized {
+    const char* key;
+    const char* type;
+    void* data;
+};
+
 class KeyStore {
 public:
     void initializeWithDefaults() {
@@ -30,11 +37,8 @@ public:
     }
     
     void put(std::string key, std::any value) {
-        const char* type = value.type().name();
         std::unique_lock<std::mutex> lock(mutex);
-        char* name = abi::__cxa_demangle(type,0,0,0);
         valueMap[key] = value;
-        std::cout << "key is " << key << " type is " << name << "\n";
         lock.unlock();
     };
     
@@ -64,14 +68,17 @@ private:
     }
     
     std::byte* toByteArray() {
+        for(std::map<std::string, std::any>::iterator iter = valueMap.begin(); iter != valueMap.end(); ++iter) {
+            std::string key = iter->first;
+            std::any value = valueMap[key];
+            serialized data;
+            data.key = key.data();
+            data.type = value.type().name();
+            
+        }
         return NULL;
     }
 };
 
-struct serialized {
-    char* key;
-    char* type;
-    void* data;
-}
 
 #endif /* KeyStore_hpp */
