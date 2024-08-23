@@ -35,6 +35,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
     KeyStore keyStore;
     KeyStoreTwo keyStoreTwo;
+    std::byte bytes[] = {(std::byte)0xDE, (std::byte)0xAD, (std::byte)0xBE, (std::byte)0xEF, (std::byte)0x00};
 
     // Call the initialization method for the KeyStore
     keyStore.initializeWithDefaults();
@@ -60,38 +61,50 @@ int main(int argc, const char * argv[]) {
     
     std::cout << "Retrieved double value " << doubleValue << "\n";
     
+    std::cout << "Size of array " << sizeof(bytes) << "\n";
     
-    try {
-        int valueOne = std::any_cast<int>(retrieved);
-        std::cout << "Got " << valueOne << " for keyOne\n";
-        retrieved = keyStore.get("keyTwo");
-        float valueTwo = std::any_cast<float>(retrieved);
-        std::cout << "Float value is " << valueTwo << "\n";
-        retrieved = keyStore.get("keyThree");
-        double valueThree = std::any_cast<double>(retrieved);
-        std::cout << "Double value is " << valueThree << "\n";
-        retrieved = keyStore.get("keyFour");
-        unsigned char* byteValues = std::any_cast<unsigned char*>(retrieved);
-        std::cout << "Byte values are " << byteValues << "\n";
-        retrieved = keyStore.get("undefined key");
-        if(!retrieved.has_value()) {
-            std::cout << "Got no value for undefined key, as expected\n";
-        } else {
-            std::cout << "Weird, this should not have a value\n";
-        }
-       
-    } catch(const std::bad_any_cast& e) {
-        std::cout << "Something went wrong process retrieved value\n";
+    keyStoreTwo.put("byteArrayKey", bytes, sizeof(bytes));
+    
+    std::byte* resultBytes = keyStoreTwo.getBytes("byteArrayKey");
+    
+    std::cout << "Size of resulting array " << sizeof(resultBytes) << "\n";
+    for(int i = 0; i < sizeof(resultBytes); i++) {
+        printf("0x%02x ", (unsigned char) resultBytes[i]);
+//        std::cout << " " << resultBytes[i] << " ";
     }
+    std::cout << "\n";
     
-    // Create the thread to write values
-    std::thread writeThread(threadTwo, &keyStore);
-
-    // Create thread to read values
-    std::thread readThread(threadOne, &keyStore);
+//    try {
+//        int valueOne = std::any_cast<int>(retrieved);
+//        std::cout << "Got " << valueOne << " for keyOne\n";
+//        retrieved = keyStore.get("keyTwo");
+//        float valueTwo = std::any_cast<float>(retrieved);
+//        std::cout << "Float value is " << valueTwo << "\n";
+//        retrieved = keyStore.get("keyThree");
+//        double valueThree = std::any_cast<double>(retrieved);
+//        std::cout << "Double value is " << valueThree << "\n";
+//        retrieved = keyStore.get("keyFour");
+//        unsigned char* byteValues = std::any_cast<unsigned char*>(retrieved);
+//        std::cout << "Byte values are " << byteValues << "\n";
+//        retrieved = keyStore.get("undefined key");
+//        if(!retrieved.has_value()) {
+//            std::cout << "Got no value for undefined key, as expected\n";
+//        } else {
+//            std::cout << "Weird, this should not have a value\n";
+//        }
+//       
+//    } catch(const std::bad_any_cast& e) {
+//        std::cout << "Something went wrong process retrieved value\n";
+//    }
     
-    writeThread.join();
-    readThread.join();
+//    // Create the thread to write values
+//    std::thread writeThread(threadTwo, &keyStore);
+//
+//    // Create thread to read values
+//    std::thread readThread(threadOne, &keyStore);
+//    
+//    writeThread.join();
+//    readThread.join();
     return 0;
 }
 
