@@ -31,6 +31,7 @@
 		D379985B2C78F6CC00044008 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D37998622C78F8F800044008 /* KeyStore.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KeyStore.cpp; sourceTree = "<group>"; };
 		D37998632C78F8F800044008 /* KeyStore.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KeyStore.hpp; sourceTree = "<group>"; };
+		D3C663E52C7A3A2500BF0F82 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		D379984F2C78F6CC00044008 = {
 			isa = PBXGroup;
 			children = (
+				D3C663E52C7A3A2500BF0F82 /* README.md */,
 				D379985A2C78F6CC00044008 /* KeyValueStore */,
 				D37998592C78F6CC00044008 /* Products */,
 			);
